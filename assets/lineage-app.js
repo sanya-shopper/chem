@@ -57,21 +57,26 @@
     }).join("") + "</div>";
   }
 
-  /** One trajectory: before-UNR → role@UNR → after, with a photo and badges. */
+  /** One person's journey: From (before UNR) → At UNR (years) → Now, + links. */
   function pathRow(p) {
+    const badgeText = "runs their own lab" + (p.ownLabWhere ? " · " + esc(p.ownLabWhere) : "");
     const badge = p.ownLab
-      ? '<span class="own-lab">now runs own lab' + (p.ownLabWhere ? " · " + esc(p.ownLabWhere) : "") + "</span>"
+      ? (p.ownLabUrl
+          ? '<a class="own-lab" href="' + esc(p.ownLabUrl) + '" target="_blank" rel="noopener">' + badgeText + " ↗</a>"
+          : '<span class="own-lab">' + badgeText + "</span>")
       : "";
     const before = p.beforeUNR
-      ? '<span class="step">' + esc(p.beforeUNR) + "</span>"
-      : '<span class="step muted">before UNR: not documented</span>';
-    const here = '<span class="step here">' + esc(p.role) + (p.years ? " · " + esc(p.years) : "") + "</span>";
-    const after = '<span class="step after">' + esc(p.after || "destination not documented") + "</span>";
+      ? '<span class="step"><b>From:</b> ' + esc(p.beforeUNR) + "</span>"
+      : '<span class="step muted"><b>Before UNR:</b> not documented</span>';
+    const here = '<span class="step here"><b>At UNR:</b> ' + esc(p.role) + (p.years ? ", " + esc(p.years) : "") + "</span>";
+    const after = '<span class="step after"><b>Now:</b> ' + esc(p.after || "not documented") + "</span>";
+    const story = p.story ? '<p class="path-story">' + esc(p.story) + "</p>" : "";
     return '<li class="path">' +
       avatar(p.name, p.photo, "pic") +
       '<div class="path-body">' +
         '<div class="path-name">' + esc(p.name) + badge + "</div>" +
         '<div class="steps">' + before + '<span class="sep">→</span>' + here + '<span class="sep">→</span>' + after + "</div>" +
+        story +
         linkRow(p.links) +
       "</div>" +
     "</li>";
@@ -110,7 +115,11 @@
     html += '<details class="fold"><summary>Selected publications</summary>' + pubsBlock(f.pubs) + "</details>";
     // Genealogy tree
     if (lab.tree && lab.tree.length) {
-      html += '<h3 class="ln-h3">Where trainees came from &amp; went next</h3>' +
+      html += '<h3 class="ln-h3">Student &amp; researcher journeys</h3>' +
+        '<div class="legend">Each row is one person’s path: ' +
+          '<span class="lg lg-from">From</span> where they studied before UNR → ' +
+          '<span class="lg lg-at">At UNR</span> the years they spent here → ' +
+          '<span class="lg lg-now">Now</span> where they are today.</div>' +
         '<ul class="paths">' + lab.tree.map(pathRow).join("") + "</ul>";
     }
     // Current cohort

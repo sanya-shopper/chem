@@ -64,7 +64,7 @@
 
   function studentsBlock(f) {
     if (typeof f.students === "string") {
-      return '<div class="students"><h4>Students &amp; trainees</h4>' +
+      return '<div class="students"><h4>Students &amp; researchers</h4>' +
         '<p class="none">' + esc(f.students) + "</p></div>";
     }
     const items = f.students.map(function (s) {
@@ -74,7 +74,7 @@
         '<span class="badge dept">' + esc(s.degree) + "</span>" +
         '<span class="arrow">→</span>' + esc(s.outcome) + own + " " + cites + "</li>";
     }).join("");
-    return '<div class="students"><h4>Students &amp; trainees (verified destinations)</h4><ul>' +
+    return '<div class="students"><h4>Students &amp; researchers (verified destinations)</h4><ul>' +
       items + "</ul></div>";
   }
 

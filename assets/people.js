@@ -43,17 +43,6 @@ const JOURNEYS = [
     ],
   },
   {
-    name: "Michelle Fuhrman",
-    from: "Chemistry undergraduate, UNR",
-    did: "Won a National Science Foundation Graduate Research Fellowship while still a UNR chemistry undergraduate (2017).",
-    next: "NSF-funded PhD research",
-    destDomain: "nsf.gov",
-    badge: "National NSF Fellow",
-    sources: [
-      "https://www.unr.edu/nevada-today/news/2017/nsf-graduate-research-fellowship",
-    ],
-  },
-  {
     name: "Crissey Cameron",
     from: "Chemistry undergraduate researcher, Tal-Gan Lab (2017–2020)",
     did: "Did hands-on chemical-biology research as a UNR undergrad.",
@@ -106,21 +95,29 @@ const DESTINATIONS = {
   ],
 };
 
-/** Openly-licensed campus photography (Wikimedia Commons, CC BY-SA 2.0, Ken Lund). */
+/**
+ * Campus & lab photography. These are University of Nevada, Reno first-party
+ * images (verified to serve real content), used on this UNR-focused guide; each
+ * loads with a graceful gradient fallback (people-app.js) if a URL ever moves.
+ */
 const FACILITIES = {
-  credit: "Photos: Ken Lund, CC BY-SA 2.0 (Wikimedia Commons)",
+  credit: "Images: University of Nevada, Reno",
   images: [
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Morrill_Hall%2C_University_of_Nevada_%2C_Reno%2C_Nevada_%283162493782%29.jpg",
-      caption: "Morrill Hall — the university’s founding building, on the historic Quad",
+      url: "https://www.unr.edu/main/images/news/2026/April/crystallization-team.jpg",
+      caption: "UNR students running a crystallization project in the lab",
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Mathewson-IGT_Knowledge_Center%2C_University_of_Nevada%2C_Reno%2C_Nevada_%283161659371%29.jpg",
-      caption: "Mathewson-IGT Knowledge Center — the main library and study hub",
+      url: "https://www.unr.edu/main/images/news/2026/July/alyssa-radakovich.jpg",
+      caption: "Chemistry graduate researcher Alyssa Radakovich at the bench",
     },
     {
-      url: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Mackay_School_of_Mines_Building%2C_University_of_Nevada%2C_Reno%2C_Nevada_%283162493646%29.jpg",
-      caption: "Mackay School of Mines — a historic science building on campus",
+      url: "https://www.unr.edu/global/images/unr-stock/CampusImage-FB.jpg",
+      caption: "The University of Nevada, Reno campus",
+    },
+    {
+      url: "https://www.unr.edu/main/images/colleges-schools/science/home/cta-image/mackay-school-ctaimage.jpg",
+      caption: "The Mackay School building, College of Science",
     },
   ],
 };

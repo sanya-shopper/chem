@@ -22,6 +22,23 @@
     return "https://www.google.com/s2/favicons?domain=" + encodeURIComponent(domain) + "&sz=64";
   }
 
+  function colorFor(name) {
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) % 360;
+    return "hsl(" + h + ", 45%, 42%)";
+  }
+  function initials(name) {
+    const p = String(name).trim().split(/\s+/).filter(Boolean);
+    return ((p[0] ? p[0][0] : "?") + (p.length > 1 ? p[p.length - 1][0] : "")).toUpperCase();
+  }
+  function avatarUri(name) {
+    const svg = '<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96">' +
+      '<rect width="96" height="96" rx="48" fill="' + colorFor(name) + '"/>' +
+      '<text x="50%" y="50%" dy=".35em" text-anchor="middle" font-family="Arial" font-size="40" fill="#fff">' +
+      esc(initials(name)) + "</text></svg>";
+    return "data:image/svg+xml;utf8," + encodeURIComponent(svg);
+  }
+
   function sourceLinks(sources) {
     return sources.map(function (u, i) {
       return '<a href="' + esc(u) + '" target="_blank" rel="noopener">source' +
@@ -33,8 +50,10 @@
     const dest = '<img class="dest-ic" alt="" loading="lazy" referrerpolicy="no-referrer" src="' +
       esc(favicon(j.destDomain)) + '" onerror="this.style.display=\'none\'" />';
     return '<article class="journey">' +
-      '<div class="j-head"><span class="j-name">' + esc(j.name) + "</span>" +
-        (j.badge ? '<span class="j-badge">' + esc(j.badge) + "</span>" : "") + "</div>" +
+      '<div class="j-head">' +
+        '<img class="j-avatar" alt="" src="' + esc(avatarUri(j.name)) + '" />' +
+        '<div><span class="j-name">' + esc(j.name) + "</span>" +
+        (j.badge ? '<span class="j-badge">' + esc(j.badge) + "</span>" : "") + "</div></div>" +
       '<div class="j-from">' + esc(j.from) + "</div>" +
       '<p class="j-did">' + esc(j.did) + "</p>" +
       '<div class="j-next">' + dest + "<span><strong>Now:</strong> " + esc(j.next) + "</span></div>" +
