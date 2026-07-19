@@ -128,11 +128,38 @@
     }).join("") + "</div>";
   }
 
+  function tagClass(tag) {
+    return "tag-" + String(tag).toLowerCase().replace(/[^a-z]+/g, "-");
+  }
+  function trajectoryCard(t) {
+    var step = function (label, val, cls) {
+      return '<span class="tstep ' + (cls || "") + '"><b>' + label + "</b> " + esc(val) + "</span>";
+    };
+    return '<article class="traj">' +
+      '<div class="traj-head"><span class="traj-name">' + esc(t.name) + "</span>" +
+        '<span class="traj-tag ' + tagClass(t.tag) + '">' + esc(t.tag) + " undergrad</span></div>" +
+      '<div class="traj-focus">' + esc(t.focus) + "</div>" +
+      '<div class="tsteps">' +
+        step("🎓 Undergrad:", t.undergrad, "") + '<span class="sep">→</span>' +
+        step("📘 PhD:", t.phd, "") + '<span class="sep">→</span>' +
+        step("🔬 Postdoc:", t.postdoc, "") + '<span class="sep">→</span>' +
+        step("🏛️ Now:", t.now, "tstep-now") +
+      "</div>" +
+      '<div class="j-src"><span class="micon">📄</span> <a href="' + esc(t.source) + '" target="_blank" rel="noopener">verified bio →</a></div>' +
+    "</article>";
+  }
+  function renderTrajectories() {
+    var host = document.getElementById("trajectories");
+    if (!host || typeof TRAJECTORIES === "undefined") return;
+    host.innerHTML = '<div class="traj-grid">' + TRAJECTORIES.map(trajectoryCard).join("") + "</div>";
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderJourneys();
     renderDestinations();
     renderFacilities();
     renderVideos();
     renderSocials();
+    renderTrajectories();
   });
 })();

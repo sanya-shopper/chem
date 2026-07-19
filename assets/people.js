@@ -136,6 +136,46 @@ const VIDEOS = [
   { id: "IRbR5ZLhFz0", title: "Why the Pack: 150 years of Nevada" },
 ];
 
+/**
+ * TRAJECTORIES — verified undergrad → PhD → postdoc → faculty paths of current
+ * early-career (assistant/newly-associate) drug-discovery professors. Every step
+ * was read off an official faculty/lab bio page (source linked). `tag` classifies
+ * the UNDERGRADUATE institution to make the "your start doesn't have to be elite"
+ * pattern visible at a glance.
+ */
+const TRAJECTORIES = [
+  { name: "Brittany S. Morgan", now: "Asst. Professor of Cancer Drug Discovery, Notre Dame", focus: "Covalent drugs against cancer proteins (first-gen college student)",
+    undergrad: "Western Kentucky University", tag: "Regional public", phd: "Duke University", postdoc: "University of Michigan",
+    source: "https://chemistry.nd.edu/people/brittany-morgan/" },
+  { name: "Cassandra Callmann", now: "Asst. Professor of Chemistry, UT Austin (CPRIT cancer scholar)", focus: "Carbohydrate-based materials for cancer",
+    undergrad: "West Chester University of Pennsylvania", tag: "Regional public", phd: "UC San Diego", postdoc: "Northwestern University",
+    source: "https://chemistry.utexas.edu/directory/cassandra-callmann" },
+  { name: "Velvet Blair Journigan", now: "Asst. Professor of Pharmaceutical Sciences, Univ. of Pittsburgh", focus: "Small molecules for chronic pain (TRPM8)",
+    undergrad: "UNC Wilmington", tag: "Regional public", phd: "University of Mississippi", postdoc: "—",
+    source: "https://www.pharmacy.pitt.edu/people/velvet-blair-journigan" },
+  { name: "Matthew J. Moschitto", now: "Asst. Professor of Medicinal Chemistry, Rutgers", focus: "Covalent inhibitors for understudied proteins",
+    undergrad: "Bates College", tag: "Liberal-arts college", phd: "Cornell University", postdoc: "Northwestern (Silverman lab)",
+    source: "https://sites.rutgers.edu/moschitto-lab/about/" },
+  { name: "Steven Bloom", now: "Assoc. Professor of Medicinal Chemistry, Univ. of Kansas", focus: "Photoredox chemistry for protein/peptide drugs",
+    undergrad: "McDaniel College", tag: "Liberal-arts college", phd: "Johns Hopkins University", postdoc: "Princeton (MacMillan lab)",
+    source: "https://medchem.ku.edu/people/steven-bloom" },
+  { name: "Elizabeth Parkinson", now: "Assoc. Professor of Chemistry & Med. Chem., Purdue", focus: "Natural-product discovery for antibiotics & anticancer",
+    undergrad: "Rhodes College", tag: "Liberal-arts college", phd: "Univ. of Illinois (Hergenrother lab)", postdoc: "Univ. of Illinois",
+    source: "https://www.chem.purdue.edu/people/profile/eparkins" },
+  { name: "Charlie Fehl", now: "Asst. Professor of Chemistry, Wayne State", focus: "Chemical probes for sugar signaling in cancer & diabetes",
+    undergrad: "University of Michigan", tag: "Public flagship", phd: "University of Kansas", postdoc: "Oxford (Ben Davis lab)",
+    source: "https://fehl-lab.com/charlie-fehl/" },
+  { name: "Xingui Liu", now: "Asst. Professor of Medicinal Chemistry, Univ. of Florida", focus: "PROTAC targeted protein degraders",
+    undergrad: "China Pharmaceutical University", tag: "International", phd: "Univ. of Arkansas for Medical Sciences", postdoc: "Florida & Dundee (Ciulli lab)",
+    source: "https://mc.pharmacy.ufl.edu/profile/liu-xingui/" },
+  { name: "Keriann M. Backus", now: "Assoc. Professor of Chemistry & Biochem., UCLA", focus: "Covalent chemoproteomics for “undruggable” targets",
+    undergrad: "Brown University", tag: "Ivy League", phd: "University of Oxford", postdoc: "Scripps (Cravatt lab)",
+    source: "https://www.chemistry.ucla.edu/directory/backus-keriann-m/" },
+  { name: "Ekaterina V. Vinogradova", now: "Asst. Professor, The Rockefeller University", focus: "Covalent chemical proteomics for immune drug targets",
+    undergrad: "Higher Chemical College (Russian Academy of Sciences)", tag: "International", phd: "MIT (Buchwald lab)", postdoc: "Scripps (Cravatt lab)",
+    source: "https://www.rockefeller.edu/our-scientists/heads-of-laboratories/8735-ekaterina-v-vinogradova/" },
+];
+
 /** Official UNR social accounts (brand-colored chips). */
 const SOCIALS = [
   { name: "Instagram", kind: "instagram", url: "https://www.instagram.com/unevadareno/" },
@@ -151,7 +191,8 @@ if (typeof window !== "undefined") {
   window.FACILITIES = FACILITIES;
   window.VIDEOS = VIDEOS;
   window.SOCIALS = SOCIALS;
+  window.TRAJECTORIES = TRAJECTORIES;
 }
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { JOURNEYS, DESTINATIONS, FACILITIES, VIDEOS, SOCIALS };
+  module.exports = { JOURNEYS, DESTINATIONS, FACILITIES, VIDEOS, SOCIALS, TRAJECTORIES };
 }

@@ -5,7 +5,7 @@
 
 "use strict";
 
-const { JOURNEYS, DESTINATIONS, FACILITIES } = require("../assets/people.js");
+const { JOURNEYS, DESTINATIONS, FACILITIES, TRAJECTORIES } = require("../assets/people.js");
 
 const failures = [];
 const fail = (m) => failures.push(m);
@@ -35,6 +35,14 @@ FACILITIES.images.forEach((im, i) => {
   if (!isUrl(im.url)) fail(`FACILITIES.images[${i}]: url not http(s).`);
   if (!/\.(jpg|jpeg|png|svg)$/i.test(im.url.split("?")[0])) fail(`FACILITIES.images[${i}]: url is not a direct image file.`);
   if (!im.caption) fail(`FACILITIES.images[${i}]: missing caption.`);
+});
+
+(TRAJECTORIES || []).forEach((t, i) => {
+  const w = "TRAJECTORIES[" + i + (t.name ? " " + t.name : "") + "]";
+  ["name", "now", "focus", "undergrad", "tag", "phd", "postdoc"].forEach((k) => {
+    if (!t[k]) fail(`${w}: missing ${k}.`);
+  });
+  if (!isUrl(t.source)) fail(`${w}: source must be an http(s) URL.`);
 });
 
 if (failures.length) {

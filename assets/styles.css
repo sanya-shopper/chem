@@ -502,6 +502,24 @@ a.own-lab:hover { filter: brightness(1.08); text-decoration: none; }
 .j-src { margin-top: 10px; font-size: .78rem; }
 .j-src a { color: var(--text-muted); }
 
+/* Professor trajectory cards */
+.traj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.traj { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; box-shadow: var(--shadow); border-left: 4px solid var(--accent); }
+.traj-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: space-between; }
+.traj-name { font-weight: 800; font-size: 1.05rem; }
+.traj-tag { font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .02em; border-radius: 999px; padding: 2px 9px; color: #fff; white-space: nowrap; }
+.tag-regional-public { background: #16a34a; }
+.tag-liberal-arts-college { background: #7c3aed; }
+.tag-public-flagship { background: #2563eb; }
+.tag-international { background: #ea580c; }
+.tag-ivy-league { background: #334155; }
+.traj-focus { color: var(--text-muted); font-size: .9rem; margin: 6px 0 10px; }
+.tsteps { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.tstep { font-size: .83rem; padding: 4px 9px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); }
+.tstep b { color: var(--text-muted); font-weight: 700; }
+.tstep-now { background: var(--accent); color: var(--accent-ink); border-color: transparent; }
+.tstep-now b { color: var(--accent-ink); }
+
 /* Logo wall */
 .wall-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); margin: 18px 0 10px; }
 .logo-wall { display: flex; flex-wrap: wrap; gap: 10px; }
