@@ -50,10 +50,20 @@
       'onerror="this.onerror=null;this.src=\'' + fallback.replace(/'/g, "%27") + "'\" />";
   }
 
+  function iconFor(label) {
+    var l = String(label).toLowerCase();
+    if (l.indexOf("linkedin") >= 0) return "💼";
+    if (l.indexOf("scholar") >= 0) return "🎓";
+    if (l.indexOf("researchgate") >= 0) return "🔬";
+    if (l.indexOf("lab") >= 0) return "🧪";
+    if (l.indexOf("feature") >= 0 || l.indexOf("news") >= 0) return "📰";
+    return "🔗";
+  }
   function linkRow(links) {
     if (!links || !links.length) return "";
     return '<div class="ln-links">' + links.map(function (l) {
-      return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + " ↗</a>";
+      return '<a class="ilink" href="' + esc(l.url) + '" target="_blank" rel="noopener">' +
+        '<span class="ic">' + iconFor(l.label) + "</span>" + esc(String(l.label).replace(/ ↗$/, "")) + "</a>";
     }).join("") + "</div>";
   }
 
@@ -105,10 +115,21 @@
       '<p class="lab-focus">' + esc(lab.focus) + "</p>" +
       linkRow(f.links) +
       "</div></div>";
+    // Team photo (where a lab publishes one)
+    if (lab.teamPhoto) {
+      html += '<figure class="team-photo"><img loading="lazy" referrerpolicy="no-referrer" alt="' +
+        esc(f.name) + ' research group" src="' + esc(lab.teamPhoto) +
+        '" onerror="this.closest(\'.team-photo\').classList.add(\'noimg\'); this.remove();" />' +
+        '<figcaption>Inside the ' + esc(f.name.split(" ").pop()) + " group</figcaption></figure>";
+    }
     // Undergraduate-research highlight (only where verified)
     if (lab.undergrads) {
+      var ugNames = (lab.undergradNames && lab.undergradNames.length)
+        ? '<div class="ug-names"><b>Undergrad researchers:</b> ' +
+            lab.undergradNames.map(function (n) { return '<span class="chip-sm">' + esc(n) + "</span>"; }).join(" ") + "</div>"
+        : "";
       html += '<div class="ug-flag"><span class="ug-badge">🎓 Undergraduates welcome</span> ' +
-        esc(lab.undergrads) + "</div>";
+        esc(lab.undergrads) + ugNames + "</div>";
     }
     // Collapsibles
     html += '<details class="fold"><summary>Research interests</summary><p>' + esc(f.interests) + "</p></details>";

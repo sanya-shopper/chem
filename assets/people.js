@@ -104,12 +104,12 @@ const FACILITIES = {
   credit: "Images: University of Nevada, Reno",
   images: [
     {
-      url: "https://www.unr.edu/main/images/news/2026/April/crystallization-team.jpg",
-      caption: "UNR students running a crystallization project in the lab",
+      url: "https://www.unr.edu/main/images/news/2024/August/tom-bell-group.jpg",
+      caption: "The Bell research group — grad students and undergrads together",
     },
     {
-      url: "https://www.unr.edu/main/images/news/2026/July/alyssa-radakovich.jpg",
-      caption: "Chemistry graduate researcher Alyssa Radakovich at the bench",
+      url: "https://www.unr.edu/main/images/news/2026/April/crystallization-team.jpg",
+      caption: "Students running a crystallization experiment",
     },
     {
       url: "https://www.unr.edu/global/images/unr-stock/CampusImage-FB.jpg",
@@ -119,14 +119,36 @@ const FACILITIES = {
       url: "https://www.unr.edu/main/images/colleges-schools/science/home/cta-image/mackay-school-ctaimage.jpg",
       caption: "The Mackay School building, College of Science",
     },
+    {
+      url: "https://www.unr.edu/main/images/news/2026/July/journal-artwork.jpg",
+      caption: "Cover art from a UNR chemistry research paper",
+    },
   ],
 };
+
+/** Official UNR videos to embed (verified, official @unevadareno channel). */
+const VIDEOS = [
+  { id: "r1jaVRqcVEU", title: "Take the official UNR campus tour" },
+  { id: "a932jHqCwPk", title: "Nia — art meets science at Lake Tahoe" },
+  { id: "IRbR5ZLhFz0", title: "Why the Pack: 150 years of Nevada" },
+];
+
+/** Official UNR social accounts (brand-colored chips). */
+const SOCIALS = [
+  { name: "Instagram", kind: "instagram", url: "https://www.instagram.com/unevadareno/" },
+  { name: "TikTok", kind: "tiktok", url: "https://www.tiktok.com/@unevadareno" },
+  { name: "YouTube", kind: "youtube", url: "https://www.youtube.com/@unevadareno" },
+  { name: "College of Science", kind: "instagram", url: "https://www.instagram.com/unrscience/" },
+  { name: "Chemistry on Facebook", kind: "facebook", url: "https://www.facebook.com/UNRChemistry/" },
+];
 
 if (typeof window !== "undefined") {
   window.JOURNEYS = JOURNEYS;
   window.DESTINATIONS = DESTINATIONS;
   window.FACILITIES = FACILITIES;
+  window.VIDEOS = VIDEOS;
+  window.SOCIALS = SOCIALS;
 }
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { JOURNEYS, DESTINATIONS, FACILITIES };
+  module.exports = { JOURNEYS, DESTINATIONS, FACILITIES, VIDEOS, SOCIALS };
 }
