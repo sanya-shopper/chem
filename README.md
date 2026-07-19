@@ -6,10 +6,16 @@ Biochemistry, Molecular Biology & Biotechnology (BMB)** by how directly their wo
 bears on **cancer research** — and notes, where a public source documents it, where
 their students went and which trainees now run their own labs.
 
-It is designed to be served as-is by **GitHub Pages**. There is no build step and no
-framework: three HTML pages read one JavaScript data file and render themselves.
+It has since grown into a small **prospective-student site** for the department, with a
+mobile-first landing page, an undergraduate-experience guide, and per-lab academic
+**lineages** alongside the original ranking. It is designed to be served as-is by
+**GitHub Pages** — no build step, no framework: HTML pages read small JavaScript data
+files and render themselves.
 
-- **Ranking** — `index.html`
+- **Landing** — `index.html` (mobile-first hero, routes to everything below)
+- **Undergraduate experience** — `undergrad.html` (static; degrees, paid research, instruments, scholarships)
+- **Research labs & lineages** — `lineages.html` (rendered from `assets/lineage.js`)
+- **Cancer-research ranking** — `ranking.html` (rendered from `assets/data.js`)
 - **Methodology & rubric** — `methodology.html`
 - **Sources & cross-linked bibliography** — `sources.html`
 
@@ -23,20 +29,29 @@ framework: three HTML pages read one JavaScript data file and render themselves.
 
 ```
 .
-├── index.html          # the ranking (search + filter, rendered from data.js)
+├── index.html          # mobile-first landing / hero (static)
+├── undergrad.html      # undergraduate experience guide (static, sourced inline)
+├── lineages.html       # per-lab academic genealogy (rendered from lineage.js)
+├── ranking.html        # cancer-proximity ranking (rendered from data.js)
 ├── methodology.html    # the 0–10 rubric, the four tiers, and the evidence bar
 ├── sources.html        # numbered bibliography with two-way cross-links
 ├── assets/
-│   ├── data.js         # SINGLE SOURCE OF TRUTH: SOURCES + FACULTY (+ TIERS, RUBRIC)
-│   ├── app.js          # pure render functions for the ranking and bibliography
-│   └── styles.css      # presentation; light/dark; four tier hues
+│   ├── data.js         # SINGLE SOURCE OF TRUTH for the ranking: SOURCES + FACULTY
+│   ├── app.js          # render functions for the ranking + bibliography
+│   ├── lineage.js      # SINGLE SOURCE OF TRUTH for the lineages: PROGRAM, LABS, MEDIA
+│   ├── lineage-app.js  # render functions for the lineage page (photos w/ avatar fallback)
+│   ├── styles.css      # presentation; light/dark; tiers; hero + mobile-first landing
+│   └── favicon.svg
 ├── localrefs/          # local archive copies of open-access cited PDFs
 │   ├── fetch.sh        # downloads those PDFs on your machine
 │   └── README.md
 ├── test/
-│   └── validate.js     # data-integrity checks (run before every commit)
+│   ├── validate.js          # ranking data-integrity checks
+│   └── validate-lineage.js  # lineage data-integrity checks
 └── .nojekyll           # tell Pages to serve files verbatim
 ```
+
+Run both checks before committing: `node test/validate.js && node test/validate-lineage.js`.
 
 ## Data model
 

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cancer-Research Proximity Ranking — UNR Chemistry &amp; Biochemistry</title>
+  <meta name="description" content="University of Nevada, Reno Chemistry and Biochemistry (BMB) faculty ranked by how close their research is to cancer research, with verified student-outcome notes and cited sources." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Faculty Ranked by Proximity to Cancer Research</h1>
+      <p>Faculty of the UNR Departments of Chemistry and of Biochemistry, Molecular Biology &amp; Biotechnology (BMB), ordered by how directly their research bears on cancer — with notes on where their students have gone, and which trainees now run their own labs.</p>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="undergrad.html">Undergrad</a>
+        <a href="lineages.html">Research Labs</a>
+        <a href="ranking.html">Ranking</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="note">
+      <strong>How to read this.</strong> Proximity is scored 0–10 from a transparent
+      rubric (see <a href="methodology.html">Methodology</a>) and grouped into four
+      tiers. Most faculty in these two departments are materials/physical chemists or
+      plant and vector biologists with no cancer connection — the ranking reflects that
+      honestly. Student outcomes are listed <em>only</em> where a public source documents
+      them; “runs own lab” marks a verified independent faculty appointment. Every claim
+      links to a numbered entry on the <a href="sources.html">Sources</a> page, and each
+      source links back to the faculty who cite it.
+    </div>
+
+    <div class="controls">
+      <input type="search" id="search" placeholder="Search name, title, or research…" aria-label="Search faculty" />
+      <select id="dept-filter" aria-label="Filter by department">
+        <option value="">All departments</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="BMB">Biochemistry (BMB)</option>
+      </select>
+      <select id="tier-filter" aria-label="Filter by tier">
+        <option value="">All tiers</option>
+        <option value="Direct">Direct</option>
+        <option value="Indirect">Indirect / applicable</option>
+        <option value="Tangential">Tangential</option>
+        <option value="None">No connection</option>
+      </select>
+    </div>
+    <p class="result-count" id="result-count"></p>
+
+    <noscript>
+      <div class="note">This ranking is generated in your browser from a small data file.
+      Please enable JavaScript, or read the underlying data in
+      <code>assets/data.js</code> and the write-up in <a href="methodology.html">Methodology</a>.</div>
+    </noscript>
+
+    <div id="ranking"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Built from public UNR departmental and laboratory pages and open literature, accessed 19 July 2026. This is an independent, unofficial compilation and is not affiliated with or endorsed by the University of Nevada, Reno. Research emphases and personnel change; verify against the linked primary sources before relying on any entry.</p>
+      <p><a href="index.html">Home</a> · <a href="methodology.html">Methodology &amp; rubric</a> · <a href="sources.html">Sources &amp; bibliography</a></p>
+    </div>
+  </footer>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

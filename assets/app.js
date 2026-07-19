@@ -177,7 +177,7 @@
       const backHtml = refs.length
         ? '<div class="backlinks"><span class="lbl">Cited by:</span> ' +
             refs.map(function (r) {
-              return '<a href="index.html#fac-' + esc(r.slug) + '">' + esc(r.name) + "</a>";
+              return '<a href="ranking.html#fac-' + esc(r.slug) + '">' + esc(r.name) + "</a>";
             }).join(", ") + "</div>"
         : '<div class="backlinks"><span class="lbl">' +
             (s.structural ? "Site directory reference (linked from every page)." : "Not currently cited.") +

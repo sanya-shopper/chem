@@ -3,73 +3,95 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>UNR Chemistry &amp; Biochemistry Faculty — Ranked by Proximity to Cancer Research</title>
-  <meta name="description" content="University of Nevada, Reno Chemistry and Biochemistry (BMB) faculty ranked by how close their research is to cancer research, with verified student-outcome notes and cited sources." />
+  <title>UNR Chemistry — Find Your Lab. See Where It Takes You.</title>
+  <meta name="description" content="Explore the University of Nevada, Reno Chemistry department: undergraduate life, research labs and where their students end up, and a cancer-research proximity ranking. Built for prospective students." />
+  <meta name="theme-color" content="#0b3d6b" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="wrap">
-      <h1>UNR Chemistry &amp; Biochemistry Faculty, Ranked by Proximity to Cancer Research</h1>
-      <p>Faculty of the University of Nevada, Reno Departments of Chemistry and of Biochemistry, Molecular Biology &amp; Biotechnology (BMB), ordered by how directly their research bears on cancer — with notes on where their students have gone, and which trainees earned advanced degrees and now run their own labs.</p>
-      <nav class="site-nav">
-        <a href="index.html">Ranking</a>
-        <a href="lineages.html">For Prospective Students</a>
-        <a href="methodology.html">Methodology</a>
-        <a href="sources.html">Sources</a>
-        <a href="https://www.unr.edu/chemistry/people" target="_blank" rel="noopener">UNR Chemistry ↗</a>
-        <a href="https://www.unr.edu/bmb/directory" target="_blank" rel="noopener">UNR BMB ↗</a>
-      </nav>
+  <div class="topbar">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" /> UNR Chem</a>
+    <nav>
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="undergrad.html">Undergrad</a>
+      <a href="lineages.html">Research Labs</a>
+      <a href="ranking.html">Ranking</a>
+    </nav>
+  </div>
+
+  <section class="hero">
+    <div class="inner">
+      <span class="eyebrow">University of Nevada, Reno · Chemistry</span>
+      <h1>Find your lab.<br /><span class="grad">See where it takes you.</span></h1>
+      <p class="lede">Real labs, real people, real destinations — from first-year research to a PhD to running your own group. Explore what UNR Chemistry actually offers.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="undergrad.html">Start as an undergrad →</a>
+        <a class="btn btn-ghost" href="lineages.html">Meet the research labs</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main class="wrap">
-    <div class="note">
-      <strong>How to read this.</strong> Proximity is scored 0–10 from a transparent
-      rubric (see <a href="methodology.html">Methodology</a>) and grouped into four
-      tiers. Most faculty in these two departments are materials/physical chemists or
-      plant and vector biologists with no cancer connection — the ranking reflects that
-      honestly. Student outcomes are listed <em>only</em> where a public source documents
-      them; “runs own lab” marks a verified independent faculty appointment. Every claim
-      links to a numbered entry on the <a href="sources.html">Sources</a> page, and each
-      source links back to the faculty who cite it.
+  <div class="stats">
+    <div class="stat reveal"><div class="num">3</div><div class="lbl">alumni now running their own academic labs</div></div>
+    <div class="stat reveal"><div class="num">4</div><div class="lbl">B.S. emphases — incl. an ACS-certified track</div></div>
+    <div class="stat reveal"><div class="num">Yr 1</div><div class="lbl">get <em>paid</em> to do research through PREP</div></div>
+    <div class="stat reveal"><div class="num">$2,250</div><div class="lbl">per-semester undergrad research awards (NURA)</div></div>
+  </div>
+
+  <section class="section">
+    <h2>Pick your path</h2>
+    <p class="sub">Four ways in — tap whichever fits where you are right now.</p>
+    <div class="tiles">
+      <a class="tile" href="undergrad.html">
+        <div class="ic">🎓</div>
+        <h3>Undergraduate experience</h3>
+        <p>Degrees, paid research from year one, instruments you’ll actually touch, scholarships, and where grads go.</p>
+        <div class="go">Explore undergrad →</div>
+      </a>
+      <a class="tile" href="lineages.html">
+        <div class="ic">🧬</div>
+        <h3>Research labs &amp; lineages</h3>
+        <p>Medicinal &amp; chemical-biology groups — who trains there, and the exact path from undergrad to PhD to career.</p>
+        <div class="go">See the lineages →</div>
+      </a>
+      <a class="tile" href="ranking.html">
+        <div class="ic">🎯</div>
+        <h3>Cancer-research ranking</h3>
+        <p>Which faculty actually work on cancer — scored on a transparent rubric, sourced, and honest about the rest.</p>
+        <div class="go">Open the ranking →</div>
+      </a>
+      <a class="tile" href="methodology.html">
+        <div class="ic">🔎</div>
+        <h3>How this was built</h3>
+        <p>The scoring method and every source. No invented students, no invented faces — just verified, cited facts.</p>
+        <div class="go">Read the method →</div>
+      </a>
     </div>
+  </section>
 
-    <div class="controls">
-      <input type="search" id="search" placeholder="Search name, title, or research…" aria-label="Search faculty" />
-      <select id="dept-filter" aria-label="Filter by department">
-        <option value="">All departments</option>
-        <option value="Chemistry">Chemistry</option>
-        <option value="BMB">Biochemistry (BMB)</option>
-      </select>
-      <select id="tier-filter" aria-label="Filter by tier">
-        <option value="">All tiers</option>
-        <option value="Direct">Direct</option>
-        <option value="Indirect">Indirect / applicable</option>
-        <option value="Tangential">Tangential</option>
-        <option value="None">No connection</option>
-      </select>
+  <section class="section">
+    <h2>Why Reno?</h2>
+    <p class="sub">A serious research department in a city that’s 45 minutes from Lake Tahoe.</p>
+    <div class="stats" style="margin-top:0;padding:0;">
+      <div class="stat"><div class="num">76%</div><div class="lbl">of students receive financial aid</div></div>
+      <div class="stat"><div class="num">54%</div><div class="lbl">graduate with no student debt</div></div>
+      <div class="stat"><div class="num">3</div><div class="lbl">campus museums: planetarium, natural history, Keck earth science</div></div>
     </div>
-    <p class="result-count" id="result-count"></p>
+    <p class="sub" style="margin-top:14px;font-size:.85rem;">Aid figures and museums per the UNR chemistry degree page. See the <a href="undergrad.html">undergrad page</a> for sources.</p>
+  </section>
 
-    <noscript>
-      <div class="note">This ranking is generated in your browser from a small data file.
-      Please enable JavaScript, or read the underlying data in
-      <code>assets/data.js</code> and the write-up in <a href="methodology.html">Methodology</a>.</div>
-    </noscript>
-
-    <div id="ranking"></div>
-  </main>
+  <div class="cta-band">
+    <h2>Curious what a lab actually feels like?</h2>
+    <p>Follow real trainees from their first undergrad project to where they are now.</p>
+    <a class="btn btn-primary" href="lineages.html">Explore the lineages →</a>
+  </div>
 
   <footer class="site-footer">
     <div class="wrap">
-      <p>Built from public UNR departmental and laboratory pages and open literature, accessed 19 July 2026. This is an independent, unofficial compilation and is not affiliated with or endorsed by the University of Nevada, Reno. Research emphases and personnel change; verify against the linked primary sources before relying on any entry.</p>
-      <p><a href="methodology.html">Methodology &amp; rubric</a> · <a href="sources.html">Sources &amp; bibliography</a></p>
+      <p>Independent, unofficial guide to UNR Chemistry for prospective students · not affiliated with or endorsed by the University of Nevada, Reno · public sources accessed 19 July 2026.</p>
+      <p><a href="undergrad.html">Undergrad</a> · <a href="lineages.html">Research Labs</a> · <a href="ranking.html">Ranking</a> · <a href="methodology.html">Methodology</a> · <a href="sources.html">Sources</a></p>
     </div>
   </footer>
-
-  <script src="assets/data.js"></script>
-  <script src="assets/app.js"></script>
 </body>
 </html>

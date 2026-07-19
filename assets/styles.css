@@ -307,6 +307,145 @@ a:hover { text-decoration: underline; }
   .members { grid-template-columns: 1fr; }
 }
 
+/* ==========================================================================
+   Landing + undergrad pages — mobile-first, high-energy, tap-friendly.
+   Everything here is progressive: it layers on top of the tokens above and
+   respects prefers-reduced-motion.
+   ========================================================================== */
+
+/* Slim sticky brand bar for the landing/undergrad flow */
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 10px 16px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(1.4) blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+.brand { display: flex; align-items: center; gap: 9px; font-weight: 800; letter-spacing: -.01em; color: var(--text); }
+.brand img { width: 26px; height: 26px; }
+.topbar nav { display: flex; gap: 4px; flex-wrap: wrap; }
+.topbar nav a {
+  font-size: .82rem; font-weight: 600; color: var(--text-muted);
+  padding: 6px 10px; border-radius: 999px;
+}
+.topbar nav a:hover, .topbar nav a[aria-current="page"] {
+  background: var(--surface-2); color: var(--text); text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  position: relative; overflow: hidden;
+  color: #fff;
+  padding: 64px 20px 72px;
+  background:
+    radial-gradient(1200px 500px at 15% -10%, #1f6feb55, transparent 60%),
+    radial-gradient(900px 500px at 100% 0%, #17b39a55, transparent 55%),
+    linear-gradient(160deg, #0b3d6b 0%, #0a2a4d 55%, #0b3d6b 100%);
+}
+.hero .inner { max-width: var(--maxw); margin: 0 auto; }
+.hero .eyebrow {
+  display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: #bfe3ff;
+  border: 1px solid #ffffff33; border-radius: 999px; padding: 5px 12px; margin-bottom: 18px;
+}
+.hero h1 {
+  margin: 0 0 14px; font-weight: 850; letter-spacing: -.02em; line-height: 1.05;
+  font-size: clamp(2.1rem, 8vw, 3.6rem);
+}
+.hero h1 .grad {
+  background: linear-gradient(90deg, #7ee0c8, #6fb8ff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero .lede { margin: 0 0 26px; font-size: clamp(1.02rem, 3.6vw, 1.28rem); color: #e7f0fb; max-width: 42ch; }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 700; font-size: 1.02rem; line-height: 1;
+  padding: 15px 22px; border-radius: 14px; border: 1px solid transparent;
+  min-height: 52px; /* comfortable thumb target */
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn-primary { background: linear-gradient(135deg, #35d0a8, #2f8fe0); color: #04121f; box-shadow: 0 8px 24px #14e0b033; }
+.btn-ghost { background: #ffffff12; color: #fff; border-color: #ffffff3d; }
+.btn-ghost:hover { background: #ffffff22; }
+
+/* STAT TILES */
+.stats {
+  max-width: var(--maxw); margin: -34px auto 0; padding: 0 16px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px;
+}
+.stat {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 16px; box-shadow: var(--shadow);
+}
+.stat .num { font-size: 1.7rem; font-weight: 850; letter-spacing: -.02em; color: var(--accent); line-height: 1; }
+@media (prefers-color-scheme: dark) { .stat .num { color: var(--link); } }
+.stat .lbl { margin-top: 6px; font-size: .86rem; color: var(--text-muted); }
+
+/* SECTION scaffolding */
+.section { max-width: var(--maxw); margin: 0 auto; padding: 44px 20px 8px; }
+.section h2 { font-size: clamp(1.4rem, 5vw, 1.9rem); font-weight: 800; letter-spacing: -.01em; margin: 0 0 6px; }
+.section .sub { color: var(--text-muted); margin: 0 0 20px; max-width: 60ch; }
+
+/* PATH TILES (choose-your-path) */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.tile {
+  display: block; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 18px; padding: 22px; box-shadow: var(--shadow);
+  transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
+  color: var(--text);
+}
+.tile:hover { text-decoration: none; transform: translateY(-4px); border-color: var(--accent); box-shadow: 0 12px 30px rgba(16,24,40,.12); }
+.tile .ic { font-size: 2rem; line-height: 1; }
+.tile h3 { margin: 12px 0 4px; font-size: 1.15rem; }
+.tile p { margin: 0; color: var(--text-muted); font-size: .93rem; }
+.tile .go { margin-top: 12px; font-weight: 700; color: var(--link); }
+
+/* Emphasis / step / scholarship cards used on undergrad page */
+.cardgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.ucard {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 18px; box-shadow: var(--shadow);
+}
+.ucard h3 { margin: 0 0 6px; font-size: 1.06rem; }
+.ucard .pill { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; background: var(--tier-direct); color: #fff; border-radius: 999px; padding: 2px 8px; margin-left: 6px; }
+.ucard p { margin: 6px 0 10px; color: var(--text-muted); font-size: .92rem; }
+
+.steps-flow { display: grid; gap: 12px; counter-reset: step; }
+.stepcard {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow);
+}
+.stepcard::before {
+  counter-increment: step; content: counter(step);
+  flex: 0 0 auto; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--accent); color: var(--accent-ink); font-weight: 800;
+  display: grid; place-items: center;
+}
+.stepcard h3 { margin: 0 0 3px; font-size: 1.02rem; }
+.stepcard p { margin: 0; color: var(--text-muted); font-size: .9rem; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0; }
+.chip { background: var(--surface-2); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; font-size: .86rem; }
+
+.cta-band {
+  max-width: var(--maxw); margin: 40px auto; padding: 30px 22px; text-align: center;
+  border-radius: 20px; color: #fff;
+  background: linear-gradient(135deg, #0b3d6b, #17805f);
+}
+.cta-band h2 { color: #fff; margin: 0 0 8px; }
+.cta-band p { color: #e7f0fb; margin: 0 0 18px; }
+
+/* scroll-reveal */
+.reveal { opacity: 0; transform: translateY(14px); animation: fadeup .6s ease forwards; }
+.reveal:nth-child(2){ animation-delay:.05s } .reveal:nth-child(3){ animation-delay:.1s } .reveal:nth-child(4){ animation-delay:.15s }
+@keyframes fadeup { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+
 .hidden { display: none !important; }
 
 @media (max-width: 560px) {
