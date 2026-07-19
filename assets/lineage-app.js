@@ -132,7 +132,7 @@
     }).join("");
     return '<div class="uga">' +
       '<h3 class="ln-h3 uga-h">🎓 They started here as UNR undergrads — now they’re researchers</h3>' +
-      '<p class="uga-sub">You don’t have to be a grad student. These students did research here <strong>as undergraduates</strong> and went straight to top PhD programs.</p>' +
+      '<p class="uga-sub">You don’t have to be a grad student. These students did research here <strong>as undergraduates</strong> and went straight to top PhD programs. They’re students who went all-in on research — proof the path is open from Nevada, not a promise it’s automatic.</p>' +
       '<div class="uga-grid">' + cards + "</div></div>";
   }
 
@@ -150,10 +150,13 @@
     // Team photo (where a lab publishes one)
     if (lab.teamPhoto) {
       var cap = lab.teamCaption || ("Inside the " + f.name.split(" ").pop() + " group");
+      var press = lab.teamPhotoSource
+        ? ' · <a class="press-link" href="' + esc(lab.teamPhotoSource) + '" target="_blank" rel="noopener">📰 Read the Nevada Today feature →</a>'
+        : "";
       html += '<figure class="team-photo"><img loading="lazy" referrerpolicy="no-referrer" alt="' +
         esc(cap) + '" src="' + esc(lab.teamPhoto) +
         '" onerror="this.closest(\'.team-photo\').classList.add(\'noimg\'); this.remove();" />' +
-        '<figcaption>' + esc(cap) + "</figcaption></figure>";
+        '<figcaption>' + esc(cap) + press + "</figcaption></figure>";
     }
     // Undergraduate-research highlight (only where verified)
     if (lab.undergrads) {
@@ -203,11 +206,20 @@
     host.innerHTML = LABS.map(labSection).join("");
   }
 
+  function mediaIcon(url) {
+    if (/\.pdf($|\?)/i.test(url)) return "📄";
+    if (/youtube|youtu\.be/.test(url)) return "▶️";
+    if (/nevada-today|newpaltz\.edu\/news|americanpeptidesociety|\/news\//.test(url)) return "📰";
+    if (/tuckergroupunr|wixsite|\/blog/.test(url)) return "📝";
+    if (/undergradresearch|unr\.edu/.test(url)) return "🎓";
+    return "🔗";
+  }
   function renderMedia() {
     const host = document.getElementById("media");
     if (!host) return;
     host.innerHTML = "<ul class=\"media-list\">" + MEDIA.map(function (m) {
-      return '<li><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + " ↗</a>" +
+      return '<li><span class="micon">' + mediaIcon(m.url) + "</span> " +
+        '<a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.title) + " ↗</a>" +
         ' <span class="tag">' + esc(m.lab) + "</span></li>";
     }).join("") + "</ul>";
   }

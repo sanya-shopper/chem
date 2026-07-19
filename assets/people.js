@@ -106,10 +106,12 @@ const FACILITIES = {
     {
       url: "https://www.unr.edu/main/images/news/2024/August/tom-bell-group.jpg",
       caption: "The Bell research group — grad students and undergrads together",
+      source: "https://www.unr.edu/nevada-today/news/2024/disease-inhibitors-bell-group",
     },
     {
       url: "https://www.unr.edu/main/images/news/2026/April/crystallization-team.jpg",
       caption: "Students running a crystallization experiment",
+      source: "https://www.unr.edu/nevada-today/news/2026/innovation-day",
     },
     {
       url: "https://www.unr.edu/global/images/unr-stock/CampusImage-FB.jpg",
@@ -122,6 +124,7 @@ const FACILITIES = {
     {
       url: "https://www.unr.edu/main/images/news/2026/July/journal-artwork.jpg",
       caption: "Cover art from a UNR chemistry research paper",
+      source: "https://www.unr.edu/nevada-today/news/2026/quinone-paper",
     },
   ],
 };

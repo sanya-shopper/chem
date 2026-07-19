@@ -45,6 +45,8 @@ const LABS = [
     slug: "bell",
     focus: "Medicinal chemistry · anticancer & antiviral drug design",
     teamPhoto: "https://www.unr.edu/main/images/news/2024/August/tom-bell-group.jpg",
+    teamCaption: "The Bell group in matching lab shirts",
+    teamPhotoSource: "https://www.unr.edu/nevada-today/news/2024/disease-inhibitors-bell-group",
     undergrads: "Undergraduates work alongside grad students synthesizing real drug candidates — the clearest on-ramp to academic drug discovery in the department.",
     undergradNames: ["Martin Kerr", "Gavin Paul"],
     faculty: {

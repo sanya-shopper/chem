@@ -88,10 +88,13 @@
     if (!host) return;
     host.innerHTML =
       '<div class="fac-grid">' + FACILITIES.images.map(function (im) {
+        var press = im.source
+          ? ' <a class="press-link" href="' + esc(im.source) + '" target="_blank" rel="noopener">📰 read the story →</a>'
+          : "";
         return '<figure class="fac">' +
           '<img alt="' + esc(im.caption) + '" loading="lazy" referrerpolicy="no-referrer" src="' + esc(im.url) +
           '" onerror="this.closest(\'.fac\').classList.add(\'noimg\'); this.remove();" />' +
-          '<figcaption>' + esc(im.caption) + "</figcaption></figure>";
+          '<figcaption>' + esc(im.caption) + press + "</figcaption></figure>";
       }).join("") + "</div>" +
       '<p class="fac-credit">' + esc(FACILITIES.credit) + "</p>";
   }

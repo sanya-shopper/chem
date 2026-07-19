@@ -520,6 +520,8 @@ a.own-lab:hover { filter: brightness(1.08); text-decoration: none; }
 .fac figcaption { padding: 10px 12px; font-size: .86rem; color: var(--text-muted); }
 .fac.noimg figcaption { color: #eaf3ff; }
 .fac-credit { margin: 10px 0 0; font-size: .78rem; color: var(--text-muted); }
+.press-link { font-weight: 700; color: var(--link); white-space: nowrap; }
+.micon { font-size: 1rem; margin-right: 3px; }
 
 /* Video embeds */
 .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
