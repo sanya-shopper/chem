@@ -1,0 +1,7 @@
+# Local archived PDFs are regenerable products of localrefs/fetch.sh — keep history text-only.
+localrefs/*.pdf
+localrefs/FETCH_LOG.txt
+
+# OS / editor noise
+.DS_Store
+*.swp

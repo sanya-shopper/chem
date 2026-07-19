@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Methodology — UNR Cancer-Proximity Faculty Ranking</title>
+  <meta name="description" content="How faculty are scored and ranked by research proximity to cancer, and how student-outcome data was verified." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <h1>Methodology</h1>
+      <p>How the ranking is built, how the proximity score is defined, and the standard of evidence used for student outcomes.</p>
+      <nav class="site-nav">
+        <a href="index.html">Ranking</a>
+        <a href="methodology.html">Methodology</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap prose">
+    <h2>What “proximity to cancer research” means here</h2>
+    <p>
+      The question is not “is this a good scientist?” but “how directly does this
+      person’s <em>own</em> research bear on cancer?” A world-class theoretical
+      chemist whose work never touches oncology is, for this specific purpose,
+      distant from cancer research — and the ranking says so plainly. The intent is
+      to help a reader find the people at UNR Chemistry and BMB whose labs actually
+      engage cancer biology or therapy.
+    </p>
+
+    <h2>The score (0–10)</h2>
+    <p>
+      Each faculty member receives points across five factors. The factors are
+      additive and capped at 10. The same rubric is mirrored in
+      <code>assets/data.js</code> (see <code>RUBRIC</code>) so the code and this page
+      stay in sync.
+    </p>
+    <table>
+      <thead><tr><th>Factor</th><th>Max points</th></tr></thead>
+      <tbody>
+        <tr><td>Cancer named as an explicit research target</td><td>3</td></tr>
+        <tr><td>Studies a tumor-relevant system (oncogene, tumor suppressor, cancer cell line, tumor type)</td><td>2</td></tr>
+        <tr><td>Designs or tests anticancer molecules / therapies</td><td>2</td></tr>
+        <tr><td>Stated translational or therapeutic intent toward cancer</td><td>2</td></tr>
+        <tr><td>Methods or tools transferable to cancer research</td><td>1</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The four tiers</h2>
+    <table>
+      <thead><tr><th>Tier</th><th>Meaning</th><th>Typical score</th></tr></thead>
+      <tbody>
+        <tr><td><b>Direct</b></td><td>Cancer is an explicit subject of the lab — anticancer agents, tumor biology, chemoprevention, oncogenic signaling.</td><td>7–10</td></tr>
+        <tr><td><b>Indirect / applicable</b></td><td>The lab builds methods, molecules, or studies pathways applied to cancer, but cancer is not its primary focus.</td><td>3–5</td></tr>
+        <tr><td><b>Tangential</b></td><td>Only shared techniques or conserved biology connect the work to cancer; the lab pursues no cancer application itself.</td><td>1–2.5</td></tr>
+        <tr><td><b>No connection</b></td><td>No meaningful connection to cancer found in the public record.</td><td>0–0.5</td></tr>
+      </tbody>
+    </table>
+    <p>
+      Scores are a structured editorial judgment, not a measurement. Two people one
+      point apart are effectively tied; the tiers carry the real signal. Where a
+      factor was ambiguous, the write-up on each card states the reasoning so a reader
+      can disagree with an informed basis.
+    </p>
+
+    <h2>How faculty were selected</h2>
+    <p>
+      The pool is the research-active professorial faculty (assistant, associate, and
+      full professors, plus research professors) listed on the two departmental
+      directories as of July 2026. Purely teaching-track instructors, emeritus faculty,
+      and administrative staff without an active research program were not scored.
+      Both departments’ full directories are linked from the
+      <a href="sources.html">Sources</a> page.
+    </p>
+
+    <h2>Student and trainee outcomes: the evidence bar</h2>
+    <p>
+      Tracking where a professor’s students went is the least-documented part of any
+      such survey, and the easiest to get wrong. The rule used here is strict: a former
+      student or postdoc is named <em>only</em> when a citable public source documents
+      their destination — a lab’s own alumni page, a public professional profile, or a
+      news item. Where nothing is published, the card says so rather than guessing. No
+      names were inferred, and during research two plausible-looking matches were
+      discarded after they turned out to be different people.
+    </p>
+    <p>
+      The badge <b>“runs own lab”</b> is applied only when a trainee holds a verified
+      independent faculty appointment. Note that a well-documented trainee lineage is a
+      property of a lab’s record-keeping, not of its cancer relevance: the fullest
+      verified lineages here belong to the Tucker and Tal-Gan groups, which sit lower in
+      the cancer ranking than several labs with no public alumni data at all.
+    </p>
+
+    <h2>Limitations</h2>
+    <p>
+      This is a snapshot of public information on a single date, assembled by an
+      automated research process and open to error. Faculty pages are sometimes stale,
+      cross-appointments blur department boundaries, and absence of evidence (especially
+      for student outcomes) is not evidence of absence. Treat every entry as a pointer to
+      the primary sources, which are all linked, rather than as a final word.
+    </p>
+
+    <p><a href="index.html">← Back to the ranking</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Independent, unofficial compilation · not affiliated with the University of Nevada, Reno · sources accessed 19 July 2026.</p>
+    </div>
+  </footer>
+</body>
+</html>
