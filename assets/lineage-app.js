@@ -100,6 +100,11 @@
       '<p class="lab-focus">' + esc(lab.focus) + "</p>" +
       linkRow(f.links) +
       "</div></div>";
+    // Undergraduate-research highlight (only where verified)
+    if (lab.undergrads) {
+      html += '<div class="ug-flag"><span class="ug-badge">🎓 Undergraduates welcome</span> ' +
+        esc(lab.undergrads) + "</div>";
+    }
     // Collapsibles
     html += '<details class="fold"><summary>Research interests</summary><p>' + esc(f.interests) + "</p></details>";
     html += '<details class="fold"><summary>Selected publications</summary>' + pubsBlock(f.pubs) + "</details>";

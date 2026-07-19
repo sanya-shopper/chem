@@ -249,6 +249,14 @@ a:hover { text-decoration: underline; }
 .lab-focus { margin: 6px 0 0; font-weight: 600; color: var(--accent); }
 @media (prefers-color-scheme: dark) { .lab-focus { color: var(--link); } }
 
+.ug-flag {
+  margin: 12px 0 0; padding: 10px 14px; font-size: .9rem; color: var(--text);
+  background: color-mix(in srgb, var(--tier-direct) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--tier-direct) 35%, var(--border));
+  border-radius: 10px;
+}
+.ug-badge { font-weight: 700; font-size: .78rem; text-transform: uppercase; letter-spacing: .02em; margin-right: 6px; white-space: nowrap; }
+
 .pic { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; background: var(--surface-2); flex: 0 0 auto; }
 .pic-lg { width: 84px; height: 84px; }
 

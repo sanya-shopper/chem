@@ -1,6 +1,9 @@
-# UNR Chemistry & Biochemistry Faculty — Ranked by Proximity to Cancer Research
+# UNR Chemistry — A Prospective-Student Guide (with a Cancer-Research Ranking)
 
-A small, dependency-free static website that ranks the research-active faculty of
+### 🔗 Live site: **https://sanya-shopper.github.io/chem/**
+
+A pitch to future chemists — especially anyone dreaming of **academic drug discovery** —
+showing where a UNR Chemistry education can lead, plus a small, dependency-free static website that ranks the research-active faculty of
 the University of Nevada, Reno **Department of Chemistry** and **Department of
 Biochemistry, Molecular Biology & Biotechnology (BMB)** by how directly their work
 bears on **cancer research** — and notes, where a public source documents it, where

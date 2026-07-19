@@ -44,6 +44,7 @@ const LABS = [
   {
     slug: "bell",
     focus: "Medicinal chemistry · anticancer & antiviral drug design",
+    undergrads: "Undergraduates work alongside grad students synthesizing real drug candidates — the clearest on-ramp to academic drug discovery in the department.",
     faculty: {
       name: "Thomas W. Bell",
       title: "Professor of Chemistry",
@@ -76,6 +77,7 @@ const LABS = [
   {
     slug: "tal-gan",
     focus: "Chemical biology · peptide therapeutics & quorum sensing",
+    undergrads: "A long line of undergraduate researchers, many going on to medical or graduate school — this lab clearly invests in training students early.",
     faculty: {
       name: "Yftah Tal-Gan",
       title: "Professor of Chemistry",
@@ -133,6 +135,7 @@ const LABS = [
   {
     slug: "tucker",
     focus: "Biophysical chemistry · ultrafast 2D-IR of peptides & proteins",
+    undergrads: "Regularly mentors undergraduate researchers, several of whom appear as co-authors and move on to PhD programs.",
     faculty: {
       name: "Matthew J. Tucker",
       title: "Professor of Chemistry",
