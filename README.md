@@ -43,6 +43,8 @@ files and render themselves.
 │   ├── app.js          # render functions for the ranking + bibliography
 │   ├── lineage.js      # SINGLE SOURCE OF TRUTH for the lineages: PROGRAM, LABS, MEDIA
 │   ├── lineage-app.js  # render functions for the lineage page (photos w/ avatar fallback)
+│   ├── people.js       # SINGLE SOURCE OF TRUTH for student journeys, destinations, facilities
+│   ├── people-app.js   # renders journeys / logo wall / campus gallery (graceful fallbacks)
 │   ├── styles.css      # presentation; light/dark; tiers; hero + mobile-first landing
 │   └── favicon.svg
 ├── localrefs/          # local archive copies of open-access cited PDFs
@@ -50,11 +52,13 @@ files and render themselves.
 │   └── README.md
 ├── test/
 │   ├── validate.js          # ranking data-integrity checks
-│   └── validate-lineage.js  # lineage data-integrity checks
+│   ├── validate-lineage.js  # lineage data-integrity checks
+│   └── validate-people.js   # student-journey / destination / facility checks
 └── .nojekyll           # tell Pages to serve files verbatim
 ```
 
-Run both checks before committing: `node test/validate.js && node test/validate-lineage.js`.
+Run all checks before committing:
+`node test/validate.js && node test/validate-lineage.js && node test/validate-people.js`.
 
 ## Data model
 

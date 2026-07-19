@@ -454,6 +454,48 @@ a:hover { text-decoration: underline; }
 @keyframes fadeup { to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
 
+/* Student journey cards */
+.journeys-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.journey {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+  padding: 18px; box-shadow: var(--shadow); border-top: 4px solid var(--accent);
+}
+.j-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.j-name { font-weight: 800; font-size: 1.08rem; }
+.j-badge {
+  font-size: .66rem; font-weight: 800; text-transform: uppercase; letter-spacing: .03em;
+  background: linear-gradient(135deg, #35d0a8, #2f8fe0); color: #04121f;
+  border-radius: 999px; padding: 2px 9px;
+}
+.j-from { color: var(--text-muted); font-size: .84rem; margin: 4px 0 8px; font-weight: 600; }
+.j-did { margin: 0 0 12px; font-size: .95rem; }
+.j-next {
+  display: flex; align-items: center; gap: 9px; font-size: .95rem;
+  background: var(--surface-2); border: 1px solid var(--border); border-radius: 10px; padding: 9px 12px;
+}
+.j-next .dest-ic { width: 22px; height: 22px; border-radius: 5px; flex: 0 0 auto; }
+.j-src { margin-top: 10px; font-size: .78rem; }
+.j-src a { color: var(--text-muted); }
+
+/* Logo wall */
+.wall-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); margin: 18px 0 10px; }
+.logo-wall { display: flex; flex-wrap: wrap; gap: 10px; }
+.logo-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+  padding: 7px 14px 7px 10px; font-size: .9rem; font-weight: 600; box-shadow: var(--shadow);
+}
+.logo-chip img { width: 20px; height: 20px; border-radius: 4px; }
+
+/* Facilities gallery */
+.fac-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.fac { margin: 0; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow); background: var(--surface); }
+.fac img { display: block; width: 100%; height: 190px; object-fit: cover; }
+.fac.noimg { min-height: 150px; background: linear-gradient(135deg, #0b3d6b, #17805f); display: flex; align-items: flex-end; }
+.fac figcaption { padding: 10px 12px; font-size: .86rem; color: var(--text-muted); }
+.fac.noimg figcaption { color: #eaf3ff; }
+.fac-credit { margin: 10px 0 0; font-size: .78rem; color: var(--text-muted); }
+
 .hidden { display: none !important; }
 
 @media (max-width: 560px) {
