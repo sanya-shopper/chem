@@ -81,6 +81,11 @@ const LABS = [
     focus: "Chemical biology · peptide therapeutics & quorum sensing",
     undergrads: "A long line of undergraduate researchers, many going on to medical or graduate school — this lab clearly invests in training students early.",
     undergradNames: ["Oscar Liu", "Angela Wang", "Daniel Elliott"],
+    undergradAlumni: [
+      { name: "Crissey Cameron", years: "2017–2020", major: "Chemistry", now: "Chemistry PhD, Vanderbilt University", destDomain: "vanderbilt.edu", source: "https://talgan.wixsite.com/researchgroup/alumni" },
+      { name: "Naiya Phillips", years: "2016–2018", major: "Biochemistry", now: "Biochemistry PhD, UC Berkeley", destDomain: "berkeley.edu", source: "https://talgan.wixsite.com/researchgroup/alumni" },
+      { name: "Sally Hamry", years: "2015–2018", major: "Chemistry", now: "Chemistry PhD, McGill University", destDomain: "mcgill.ca", source: "https://talgan.wixsite.com/researchgroup/alumni" },
+    ],
     faculty: {
       name: "Yftah Tal-Gan",
       title: "Professor of Chemistry",
@@ -151,6 +156,8 @@ const LABS = [
   {
     slug: "tucker",
     focus: "Biophysical chemistry · ultrafast 2D-IR of peptides & proteins",
+    teamPhoto: "https://images.squarespace-cdn.com/content/v1/5b117a105b409b1e0dd26975/1528402977123-Q9QUX1ZIRXMGAWVXETW9/laser.jpg",
+    teamCaption: "The ultrafast 2D-IR laser setup students actually run",
     undergrads: "Regularly mentors undergraduate researchers, several of whom appear as co-authors and move on to PhD programs.",
     undergradNames: ["Lexington Harris", "Chloe Blackwelder"],
     faculty: {

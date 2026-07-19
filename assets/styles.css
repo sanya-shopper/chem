@@ -305,6 +305,17 @@ a.own-lab:hover { filter: brightness(1.08); text-decoration: none; }
 .lg-at { background: var(--accent); }
 .lg-now { background: var(--tier-indirect); color: #241a00; }
 
+/* UNR-undergrad-to-researcher spotlight */
+.uga { margin: 18px 0; padding: 16px 18px; border-radius: 16px; border: 2px solid color-mix(in srgb, var(--tier-indirect) 45%, var(--border)); background: color-mix(in srgb, var(--tier-indirect) 12%, var(--surface)); }
+.uga-h { margin-top: 0; margin-bottom: 4px; color: var(--text); font-size: 1rem; text-transform: none; letter-spacing: 0; }
+.uga-sub { margin: 0 0 14px; font-size: .93rem; color: var(--text-muted); }
+.uga-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.uga-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 13px 15px; box-shadow: var(--shadow); }
+.uga-name { font-weight: 800; font-size: 1.05rem; margin-bottom: 8px; }
+.uga-card .steps { gap: 6px; }
+.uga-card .dest-ic { width: 18px; height: 18px; border-radius: 4px; vertical-align: middle; margin-right: 3px; }
+.pubs li a { color: var(--link); }
+
 .members { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
 .member { display: flex; gap: 12px; align-items: center; padding: 8px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-2); }
 .member-detail { color: var(--text-muted); font-size: .85rem; margin-top: 2px; }

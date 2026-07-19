@@ -99,9 +99,41 @@
       linkRow(m.links) + "</div></li>";
   }
 
+  function scholarUrl(q) {
+    return "https://scholar.google.com/scholar?q=" + encodeURIComponent(q);
+  }
   function pubsBlock(pubs) {
     if (!pubs || !pubs.length) return "";
-    return "<ul class=\"pubs\">" + pubs.map(function (p) { return "<li>" + esc(p.cite) + "</li>"; }).join("") + "</ul>";
+    return "<ul class=\"pubs\">" + pubs.map(function (p) {
+      var href = p.url || scholarUrl(p.cite);
+      return '<li><a href="' + esc(href) + '" target="_blank" rel="noopener">' + esc(p.cite) + " ↗</a></li>";
+    }).join("") + "</ul>";
+  }
+
+  function favicon(domain) {
+    return "https://www.google.com/s2/favicons?domain=" + encodeURIComponent(domain) + "&sz=64";
+  }
+
+  /** Prominent block: UNR undergraduates who went on to research careers. */
+  function ugAlumniBlock(lab) {
+    if (!lab.undergradAlumni || !lab.undergradAlumni.length) return "";
+    var cards = lab.undergradAlumni.map(function (a) {
+      var ic = '<img class="dest-ic" alt="" referrerpolicy="no-referrer" src="' + esc(favicon(a.destDomain)) +
+        '" onerror="this.style.display=\'none\'" />';
+      return '<div class="uga-card">' +
+        '<div class="uga-name">' + esc(a.name) + "</div>" +
+        '<div class="steps">' +
+          '<span class="step here"><b>UNR undergrad:</b> ' + esc(a.major) + ", " + esc(a.years) + "</span>" +
+          '<span class="sep">→</span>' +
+          '<span class="step after">' + ic + " <b>Now:</b> " + esc(a.now) + "</span>" +
+        "</div>" +
+        '<div class="j-src"><a href="' + esc(a.source) + '" target="_blank" rel="noopener">source</a></div>' +
+      "</div>";
+    }).join("");
+    return '<div class="uga">' +
+      '<h3 class="ln-h3 uga-h">🎓 They started here as UNR undergrads — now they’re researchers</h3>' +
+      '<p class="uga-sub">You don’t have to be a grad student. These students did research here <strong>as undergraduates</strong> and went straight to top PhD programs.</p>' +
+      '<div class="uga-grid">' + cards + "</div></div>";
   }
 
   function labSection(lab) {
@@ -117,10 +149,11 @@
       "</div></div>";
     // Team photo (where a lab publishes one)
     if (lab.teamPhoto) {
+      var cap = lab.teamCaption || ("Inside the " + f.name.split(" ").pop() + " group");
       html += '<figure class="team-photo"><img loading="lazy" referrerpolicy="no-referrer" alt="' +
-        esc(f.name) + ' research group" src="' + esc(lab.teamPhoto) +
+        esc(cap) + '" src="' + esc(lab.teamPhoto) +
         '" onerror="this.closest(\'.team-photo\').classList.add(\'noimg\'); this.remove();" />' +
-        '<figcaption>Inside the ' + esc(f.name.split(" ").pop()) + " group</figcaption></figure>";
+        '<figcaption>' + esc(cap) + "</figcaption></figure>";
     }
     // Undergraduate-research highlight (only where verified)
     if (lab.undergrads) {
@@ -134,9 +167,11 @@
     // Collapsibles
     html += '<details class="fold"><summary>Research interests</summary><p>' + esc(f.interests) + "</p></details>";
     html += '<details class="fold"><summary>Selected publications</summary>' + pubsBlock(f.pubs) + "</details>";
-    // Genealogy tree
+    // UNR-undergrad-to-researcher spotlight (leads, where available)
+    html += ugAlumniBlock(lab);
+    // Genealogy tree (graduate researchers & postdocs)
     if (lab.tree && lab.tree.length) {
-      html += '<h3 class="ln-h3">Student &amp; researcher journeys</h3>' +
+      html += '<h3 class="ln-h3">Graduate researchers &amp; postdocs in the lab</h3>' +
         '<div class="legend">Each row is one person’s path: ' +
           '<span class="lg lg-from">From</span> where they studied before UNR → ' +
           '<span class="lg lg-at">At UNR</span> the years they spent here → ' +
